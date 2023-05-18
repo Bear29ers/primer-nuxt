@@ -1,7 +1,8 @@
 <template>
   <div>
-    <slot name="header" />
-    <nav>ここにナビゲーションバーを入れる</nav>
+    <Navbar />
+    <!-- <slot name="header" /> -->
+    <!-- <nav>ここにナビゲーションバーを入れる</nav> -->
     <slot />
   </div>
 </template>
