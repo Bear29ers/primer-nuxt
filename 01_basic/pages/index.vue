@@ -18,15 +18,15 @@ const handleClick = () => {
 
 <template>
   <div>
-    <h1>Main Page</h1>
-    <button @click="handleClick">Coupon Get</button>
+    <!-- <h1>Main Page</h1> -->
+    <!-- <button @click="handleClick">Coupon Get</button> -->
     <!-- // Lazy Loadingを利用することでコンポーネントが必要なときのみJavaScriptファイルをダウンロードする -->
-    <LazyCoupon v-if="show" />
+    <!-- <LazyCoupon v-if="show" /> -->
     <!-- NuxtLayoutに明示的にnameの設定が必須になる。またNuxtLayoutがないとエラーになる（名前付きSlot） -->
-    <!-- <NuxtLayout name="default"> -->
-    <!--   <template #header>ヘッダー</template> -->
-    <!--   <h1>Main Page</h1> -->
-    <!-- </NuxtLayout> -->
+    <NuxtLayout name="default">
+      <template #header>ヘッダー</template>
+      <h1>Main Page</h1>
+    </NuxtLayout>
 
     <!-- <button @click="enableCustomLayout">Update Layout</button> -->
     <!-- <NuxtLayout name="custom"> -->
