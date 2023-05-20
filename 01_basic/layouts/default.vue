@@ -14,6 +14,8 @@ useHead({
 
 <template>
   <div>
+    <!-- lang属性をすべてのページに反映させる -->
+    <Html lang="ja" />
     <!-- ディレクトリ構造が反映される -->
     <Navbar />
     <!-- <NavNavbar /> -->

@@ -10,19 +10,19 @@ definePageMeta({
   */
 });
 
-const title = ref('Aboutページ');
-const description = ref('Aboutページ');
+// const title = ref('Aboutページ');
+// const description = ref('Aboutページ');
 
 // useMeta関数で個別にmetaタグを設定する
-useHead({
-  title,
-  meta: [
-    {
-      name: 'description',
-      content: description,
-    },
-  ],
-});
+// useHead({
+//   title,
+//   meta: [
+//     {
+//       name: 'description',
+//       content: description,
+//     },
+//   ],
+// });
 
 // const enableCustomLayout = () => {
 //   // setPageLayout関数を使ってページに適用するレイアウトを動的に変更する
@@ -37,6 +37,10 @@ useHead({
 
 <template>
   <div>
+    <Head lang="ja">
+      <Title>Aboutページ</Title>
+      <Meta name="description" content="Aboutページ" />
+    </Head>
     <!-- <button @click="enableCustomLayout">Update Layout</button> -->
 
     <!-- customレイアウトのみ適用される -->
