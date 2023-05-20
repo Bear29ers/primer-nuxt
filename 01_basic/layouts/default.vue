@@ -3,6 +3,13 @@ definePageMeta({
   // ページ単位でPage Transitionを設定する
   pageTransition: false,
 });
+
+useHead({
+  // titleTemplate: (title) => {
+  //   return title ? `${title} - Nuxt 3 Basic` : 'Nuxt 3 Basic';
+  // },
+  titleTemplate: '%s - Nuxt 3 Basic',
+});
 </script>
 
 <template>

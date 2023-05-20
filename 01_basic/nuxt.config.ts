@@ -4,6 +4,7 @@ export default defineNuxtConfig({
 
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
+    // headのキーをセットすると、charset・viewportがデフォルトで設定される
     head: {
       title: 'Nuxt 3 Basic',
       meta: [{ name: 'description', content: 'Nuxt 3 for Beginners' }],
