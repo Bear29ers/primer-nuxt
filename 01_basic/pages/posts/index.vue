@@ -43,6 +43,9 @@ const response = await fetch('/api/user', {
   body: JSON.stringify({ name: 'John Doe' }),
 });
 */
+
+// useLazyFetch
+const { data: posts, error, pending } = await useLazyFetch('https://jsonplaceholder.typicode.com/posts/');
 </script>
 
 <template>
@@ -50,8 +53,13 @@ const response = await fetch('/api/user', {
     <h1>Posts一覧</h1>
     <!-- <button @click="refresh()">再取得</button> -->
     <p v-if="error">{{ error }}</p>
+    <p v-if="pending">Loading...</p>
     <ul>
-      <li v-for="post in posts" :key="post.id">{{ post.title }}</li>
+      <li v-for="post in posts" :key="post.id">
+        <NuxtLink :to="`/posts/${post.id}`">
+          {{ post.title }}
+        </NuxtLink>
+      </li>
     </ul>
   </div>
 </template>
