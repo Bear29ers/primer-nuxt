@@ -45,7 +45,14 @@ const response = await fetch('/api/user', {
 */
 
 // useLazyFetch
-const { data: posts, error, pending } = await useLazyFetch('https://jsonplaceholder.typicode.com/posts/');
+// const { data: posts, error, pending } = await useLazyFetch('https://jsonplaceholder.typicode.com/posts/');
+
+// useLazyAsyncData
+const {
+  data: posts,
+  error,
+  pending,
+} = await useLazyAsyncData('posts', () => $fetch('https://jsonplaceholder.typicode.com/posts/'));
 </script>
 
 <template>
