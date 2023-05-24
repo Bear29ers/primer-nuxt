@@ -1,3 +1,12 @@
+<script lang="ts" setup>
+import { useCounter } from '~/composables/useCounter';
+const counter = useCounter();
+</script>
+
 <template>
-  <h1>User Listページ</h1>
+  <div>
+    <h1>User Listページ</h1>
+    <p>Count: {{ counter }}</p>
+    <NuxtPage />
+  </div>
 </template>

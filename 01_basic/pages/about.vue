@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { useCounter } from '~/composables/useCounter';
+
 // definePageMeta関数でmiddlewareを設定する
 definePageMeta({
   middleware: 'auth',
@@ -33,6 +35,10 @@ definePageMeta({
 // definePageMeta({
 //   layout: false,
 // });
+
+// useStateを利用するとページ遷移をしてもcountの値を保持する
+// const counter = useState('counter', () => 0);
+const counter = useCounter();
 </script>
 
 <template>
@@ -46,6 +52,9 @@ definePageMeta({
     <!-- customレイアウトのみ適用される -->
     <NuxtLayout name="custom">
       <h1>About Page</h1>
+      <h2>Counter</h2>
+      <p>Count: {{ counter }}</p>
+      <div><button @click="counter++">+</button></div>
     </NuxtLayout>
   </div>
 </template>
