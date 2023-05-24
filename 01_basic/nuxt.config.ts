@@ -11,4 +11,5 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', href: '/favicon.ico' }],
     },
   },
+  modules: ['@nuxtjs/tailwindcss'],
 });
