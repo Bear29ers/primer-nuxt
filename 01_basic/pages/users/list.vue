@@ -4,7 +4,11 @@
 const counter = ref(0);
 const inc = () => {
   // createErrorはNuxtから提供されている関数で、クライアント側でもサーバー側でも利用でき、エラーオブジェクトを作成できる
-  throw createError('エラー発生');
+  throw createError({
+    statusCode: 400,
+    message: 'エラー発生',
+    fatal: true, // デフォルトのエラー画面を表示させる
+  });
   counter.value++;
 };
 </script>
