@@ -14,12 +14,13 @@ const someErrorLogger = (error) => {
     <h1>Usersページ</h1>
     <!-- NuxtPageタグでページのネスト化を行う -->
     <!-- NuxtErrorBoundaryでエラーをキャッチして表示内容を制御する -->
-    <NuxtErrorBoundary @error="someErrorLogger">
-      <NuxtPage />
-      <template #error="{ error }">
-        <p>{{ error }}</p>
-        <button @click="resetError(error)">Clear Error</button>
-      </template>
-    </NuxtErrorBoundary>
+    <!-- <NuxtErrorBoundary @error="someErrorLogger"> -->
+    <!--   <NuxtPage /> -->
+    <!--   <template #error="{ error }"> -->
+    <!--     <p>{{ error }}</p> -->
+    <!--     <button @click="resetError(error)">Clear Error</button> -->
+    <!--   </template> -->
+    <!-- </NuxtErrorBoundary> -->
+    <NuxtPage />
   </div>
 </template>
