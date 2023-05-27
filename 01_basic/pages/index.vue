@@ -15,7 +15,9 @@ const handleClick = () => {
   show.value = true;
 };
 
-const { data } = useFetch('/api/hello');
+// const { data } = useFetch('/api/hello');
+
+const { data: tasks } = useFetch('/api/task');
 </script>
 
 <template>
@@ -40,6 +42,8 @@ const { data } = useFetch('/api/hello');
     <!-- <NuxtLayout name="custom"> -->
     <!--   <h1>Main Page</h1> -->
     <!-- </NuxtLayout> -->
-    <h2>{{ data }}</h2>
+    <ul>
+      <li v-for="task in tasks" :key="task.id">{{ task.task }}</li>
+    </ul>
   </div>
 </template>
