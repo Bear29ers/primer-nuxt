@@ -17,7 +17,13 @@ const handleClick = () => {
 
 // const { data } = useFetch('/api/hello');
 
+const taskRef = ref('');
 const { data: tasks } = useFetch('/api/task');
+
+const addTask = () => {
+  console.log(taskRef.value);
+  taskRef.value = '';
+};
 </script>
 
 <template>
@@ -45,5 +51,13 @@ const { data: tasks } = useFetch('/api/task');
     <ul>
       <li v-for="task in tasks" :key="task.id">{{ task.task }}</li>
     </ul>
+    <form @submit.prevent="addTask">
+      <div>
+        <input v-model="taskRef" />
+      </div>
+      <div>
+        <button type="submit">タスクを登録</button>
+      </div>
+    </form>
   </div>
 </template>
