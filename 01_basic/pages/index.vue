@@ -14,6 +14,8 @@ const show = ref(false);
 const handleClick = () => {
   show.value = true;
 };
+
+const { data } = useFetch('/api/hello');
 </script>
 
 <template>
@@ -38,5 +40,6 @@ const handleClick = () => {
     <!-- <NuxtLayout name="custom"> -->
     <!--   <h1>Main Page</h1> -->
     <!-- </NuxtLayout> -->
+    <h2>{{ data }}</h2>
   </div>
 </template>
