@@ -12,4 +12,9 @@ export default defineNuxtConfig({
     },
   },
   // modules: ['@nuxtjs/tailwindcss'],
+
+  // レンダリングモードをCSRモードへ切り替える
+  routeRules: {
+    '/posts/**': { ssr: false },
+  },
 });
