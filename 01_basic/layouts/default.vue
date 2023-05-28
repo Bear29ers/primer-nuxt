@@ -18,6 +18,10 @@ useHead({
     <Html lang="ja" />
     <!-- ディレクトリ構造が反映される -->
     <Navbar />
+    <nav>
+      <NuxtLink to="/">Home</NuxtLink>
+      <NuxtLink to="/posts">Posts</NuxtLink>
+    </nav>
     <!-- <NavNavbar /> -->
     <!-- <slot name="header" /> -->
     <!-- <nav>ここにナビゲーションバーを入れる</nav> -->

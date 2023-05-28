@@ -48,25 +48,31 @@ const response = await fetch('/api/user', {
 // const { data: posts, error, pending } = await useLazyFetch('https://jsonplaceholder.typicode.com/posts/');
 
 // useLazyAsyncData
-const {
-  data: posts,
-  error,
-  pending,
-} = await useLazyAsyncData('posts', () => $fetch('https://jsonplaceholder.typicode.com/posts/'));
+// const {
+//   data: posts,
+//   error,
+//   pending,
+// } = await useLazyAsyncData('posts', () => $fetch('https://jsonplaceholder.typicode.com/posts/'));
+
+// デフォルトのUniversal ModeはSSRとCSRを組み合わせてレンダリングが行われる
+const { data: posts } = await useFetch('https://jsonplaceholder.typicode.com/posts/');
 </script>
 
 <template>
   <div>
     <h1>Posts一覧</h1>
     <!-- <button @click="refresh()">再取得</button> -->
-    <p v-if="error">{{ error }}</p>
-    <p v-if="pending">Loading...</p>
+    <!-- <p v-if="error">{{ error }}</p> -->
+    <!-- <p v-if="pending">Loading...</p> -->
+    <!-- <ul> -->
+    <!--   <li v-for="post in posts" :key="post.id"> -->
+    <!--     <NuxtLink :to="`/posts/${post.id}`"> -->
+    <!--       {{ post.title }} -->
+    <!--     </NuxtLink> -->
+    <!--   </li> -->
+    <!-- </ul> -->
     <ul>
-      <li v-for="post in posts" :key="post.id">
-        <NuxtLink :to="`/posts/${post.id}`">
-          {{ post.title }}
-        </NuxtLink>
-      </li>
+      <li v-for="post in posts" :key="post.id">{{ post.title }}</li>
     </ul>
   </div>
 </template>
