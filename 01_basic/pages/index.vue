@@ -21,7 +21,12 @@ const taskRef = ref('');
 const { data: tasks } = useFetch('/api/task');
 
 const addTask = () => {
-  console.log(taskRef.value);
+  const { data, refresh } = useFetch('/api/task', {
+    method: 'POST',
+    body: { task: taskRef.value },
+  });
+  // POSTリクエスト後にブラウザを更新する
+  window.location.reload();
   taskRef.value = '';
 };
 </script>
